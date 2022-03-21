@@ -5,15 +5,17 @@ import headerTheme from "../theme/components/headerTheme";
 
 
 
+
+
 const Header = () => {
   return (
-    <Container theme={headerTheme} maxW='container.md'width='full' p={0} m={0} >
-      <Flex justifyContent='flex-start'>
-        <Box bg='brand.20'>
+    <Container  maxW='100vw' width='full' p={0} m={0} >
+      <Flex justifyContent='flex-start' >
+        <Box pl='2vw' pr='4vw' paddingTop= '1vw' >
           <Logo />
         </Box>
-        <Box pl={50}>
-          <Logo />
+        <Box  width='full' bg='#caf6fb' >
+          
         </Box>
       </Flex>
     </Container>
