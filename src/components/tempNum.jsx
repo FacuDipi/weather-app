@@ -7,7 +7,8 @@ import {
   FormErrorMessage,
   FormHelperText,
   Input,
-  Button
+  Button,
+  Spacer
   
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
@@ -20,17 +21,17 @@ const TempNum = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [apiData, setApiData] = useState({});
   const [getState, setGetState] = useState("");
-  const [state, setState] = useState([]);
+  const [state, setState] = useState("");
 
   const apiKey = process.env.REACT_APP_API_KEY;
-  const apiUrl = `api.openweathermap.org/data/2.5/weather?q=${state}&appid=${apiKey}&units=metric`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=dbe74c1e10696b7c5c58b4e703b1eefd&units=metric`;
 
   useEffect(() => {
     fetch(apiUrl)
       .then((res) => res.json())
       .then((data) => {
-        setIsLoaded(true);
         setApiData(data);
+        setIsLoaded(true);
         console.log(data);
       })
       .catch((error) => {
@@ -48,7 +49,6 @@ const TempNum = () => {
 
   return (
       <Container>
-
      
   <FormControl>
     <FormLabel htmlFor='city'>City</FormLabel>
@@ -56,9 +56,33 @@ const TempNum = () => {
   <FormHelperText>Search any City</FormHelperText>
   </FormControl>
 <Box>
-<Button colorScheme='teal' size='sm'>
-Select
+<Button colorScheme='teal' size='sm' onClick={submitHandler}>
+Search
 </Button>
+</Box>
+
+<Box border='1px' height= '30px'>
+
+{apiData.main ? (
+<p>
+
+The temp is: {(apiData.main.temp).toFixed(0)} °C
+
+</p>
+):(<h1>Loading</h1>)
+
+}
+<Flex >
+
+{apiData.name}
+<Spacer/>
+{apiData.sys ? (<div>{apiData.sys.country } </div>)
+: ("")
+}
+
+
+</Flex>
+
 </Box>
 
 </Container>
