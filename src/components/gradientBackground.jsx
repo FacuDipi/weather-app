@@ -1,17 +1,33 @@
-import {animate,motion} from "framer-motion"
-import { Container,} from "@chakra-ui/react";
+import {motion, useAnimation} from "framer-motion"
+import { Container, Box} from "@chakra-ui/react";
 
-const gradientBackground = ()=> {
 
-    return (
-<Container>
-    <motion.div>
-        
-    </motion.div>
-</Container>
 
-    );
 
+const GradientBackGround = ()=>{
+    const control = useAnimation()
+
+return(
+
+    <Container classname= "back-container"
+    onChange={()=> control.start({
+
+
+    }
+       )}>
+
+    <motion.Box
+    classname= "BackBox"
+   
+    >
+
+    
+
+
+    </motion.Box>
+    </Container>
+
+
+)
 };
-
-export default gradientBackground
+export default GradientBackGround
