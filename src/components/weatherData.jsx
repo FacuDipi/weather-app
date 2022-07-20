@@ -1,17 +1,3 @@
-import {
-    Container,
-    Flex,
-    Box,
-    FormControl,
-    FormLabel,
-    FormErrorMessage,
-    FormHelperText,
-    Input,
-    Button,
-    Spacer
-    
-  } from "@chakra-ui/react";
-
   import { useState, useEffect } from "react";
 
  export const WeatherData = () => {

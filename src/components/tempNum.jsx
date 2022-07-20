@@ -14,6 +14,7 @@ import {
 import { useState, useEffect } from "react";
 import  * as Temp from "../data/getWeatherdata";
 
+
 //JSON.toString(data);
 
 const TempNum = () => {
@@ -41,7 +42,7 @@ Search
 The temp is: {(apiData.main.temp).toFixed(0)} °C
 
 </p>
-):(<h1>Loading</h1>)
+):("")
 
 }
 <Flex >
@@ -62,3 +63,7 @@ The temp is: {(apiData.main.temp).toFixed(0)} °C
 };
 
 export default TempNum;
+
+
+
+
