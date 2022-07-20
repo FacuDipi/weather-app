@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import {
   Container,
   Flex,
@@ -11,14 +13,12 @@ import {
   Spacer
   
 } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
-import { getWeather } from "../data/getWeatherdata";
+export const GetWeather = () => {
+ 
 
 
-//JSON.toString(data);
 
-const TempNum = () => {
-  const [error, setError] = useState(null);
+const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [apiData, setApiData] = useState({});
   const [getState, setGetState] = useState("");
@@ -38,6 +38,7 @@ const TempNum = () => {
       .catch((error) => {
         setIsLoaded(true);
         setError(error);
+        console.log(error);
       });
   }, [apiUrl]);
 
@@ -53,7 +54,7 @@ const TempNum = () => {
      
   <FormControl>
     <FormLabel htmlFor='city'>City</FormLabel>
-    <Input id='city' type='city' onChange={inputHandler} value={getState}/>
+    <Input id='city'  onChange={inputHandler} value={getState}/>
   <FormHelperText>Search any City</FormHelperText>
   </FormControl>
 <Box>
@@ -90,8 +91,4 @@ The temp is: {(apiData.main.temp).toFixed(0)} °C
   )
 };
 
-export default TempNum;
-
-
-
-
+export default GetWeather;
