@@ -1,4 +1,4 @@
-export const initialState {
+export const initialState ={
 weather:{
     tempNum:[],
     cityName:[],
