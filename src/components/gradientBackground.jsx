@@ -33,4 +33,3 @@ return(
 };
 export default GradientBackGround
 
-
