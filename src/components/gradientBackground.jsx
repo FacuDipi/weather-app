@@ -1,6 +1,6 @@
-
 import {motion, useAnimation} from "framer-motion"
 import { Container, Box} from "@chakra-ui/react";
+
 
 
 
