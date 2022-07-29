@@ -49,46 +49,8 @@ const [error, setError] = useState(null);
     setState(getState);
   };
 
-  return (
-      <Container>
-     
-  <FormControl>
-    <FormLabel htmlFor='city'>City</FormLabel>
-    <Input id='city'  onChange={inputHandler} value={getState}/>
-  <FormHelperText>Search any City</FormHelperText>
-  </FormControl>
-<Box>
-<Button colorScheme='teal' size='sm' onClick={submitHandler}>
-Search
-</Button>
-</Box>
-
-<Box border='1px' height= '30px'>
-
-{apiData.main ? (
-<p>
-
-The temp is: {(apiData.main.temp).toFixed(0)} °C
-
-</p>
-):("")
-
-}
-<Flex >
-
-{apiData.name}
-<Spacer/>
-{apiData.sys ? (<div>{apiData.sys.country } </div>)
-: ("")
-}
-
-
-</Flex>
-
-</Box>
-
-</Container>
-  )
+  return (apiData)
 };
 
 export default GetWeather;
+
