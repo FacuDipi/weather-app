@@ -1,9 +1,9 @@
 export const initialState = {
-weatherData: {
-city: '',    
-temp:'',
-rainChances: [''],
-humidity: ''
-
-}
-}
+    weather:{
+        tempNum:[],
+        cityName:[],
+        countryName:[],
+        rainChaces: []
+    
+    }
+    };
