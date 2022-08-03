@@ -1,6 +1,7 @@
 import { Container, Flex, Box, Spacer} from "@chakra-ui/react";
 import TempNum from "./tempNum";
 import Bg from "./gradientBackground";
+import Panel from "./sidePanel";
 
 const Body = () => {
 
