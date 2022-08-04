@@ -1,9 +1,9 @@
 export const initialState = {
     weather:{
-        tempNum:[],
-        cityName:[],
-        countryName:[],
-        rainChaces: []
+        tempNum:[''],
+        cityName:[''],
+        countryName:[''],
+        rainChaces: ['']
     
     }
     };

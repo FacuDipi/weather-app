@@ -12,7 +12,7 @@ import {
   
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import  * as Temp from "../data/getWeatherdata";
+import {useSelector} from "react-redux"
 
 
 //JSON.toString(data);
