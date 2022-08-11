@@ -53,4 +53,3 @@ const [error, setError] = useState(null);
 };
 
 export default GetWeather;
-

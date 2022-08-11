@@ -1,3 +1,5 @@
+
+
 import initialState from './initialState'
 
 const rootReducer = (state = initialState, action) => {
@@ -5,8 +7,11 @@ const rootReducer = (state = initialState, action) => {
       case "FETCH_WEATHER":
         return {
           ...state,
-          count: action.payload.totalPassengers,
-          passengers: action.payload.data
+        tempNum: action.payload.main.temp ,
+        cityName: action.payload. ,
+        countryName: action.payload.,
+        rainProb: action.payload.
+          
         };
       default:
         return state;
