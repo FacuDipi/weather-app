@@ -1,16 +1,15 @@
-
-
 import initialState from './initialState'
+import { fetchWeather, FETCH_WEATHER } from '../actions';
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
-      case "FETCH_WEATHER":
+      case FETCH_WEATHER:
         return {
           ...state,
         tempNum: action.payload.main.temp ,
-        cityName: action.payload. ,
-        countryName: action.payload.,
-        rainProb: action.payload.
+        cityName: action.payload.name ,
+        countryName: action.payload.sys.country,
+        rainProb: action.payload.weather.description
           
         };
       default:

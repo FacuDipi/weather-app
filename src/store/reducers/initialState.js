@@ -1,11 +1,10 @@
 export default function initialState() {
-  return  {
-weather:{
-  tempNum:[''],
-  cityName:[''],
-  countryName:[''],
-  rainProb: ['']
-
+  return {
+    weather: {
+      tempNum: [""],
+      cityName: [""],
+      countryName: [""],
+      rainProb: [""],
+    },
+  };
 }
-}
-};
