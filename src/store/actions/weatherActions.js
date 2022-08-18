@@ -10,7 +10,7 @@ export const fetchWeather = (city) => {
           `${API_URL}&q=${city}`
       );      
       const data = await response.json();
-      dispatch({ type: "FETCH_WEATHER", payload: data });
+      dispatch({ type: FETCH_WEATHER, payload: data });
     } catch (err) {
       dispatch({ type: "FETCH_WEATHER_REJECTED", payload: err });
     }

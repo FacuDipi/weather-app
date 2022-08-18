@@ -1,5 +1,14 @@
-import initialState from './initialState'
+//import initialState from './initialState'
 import { fetchWeather, FETCH_WEATHER } from '../actions';
+ 
+const initialState = {
+    
+  tempNum: [],
+  cityName: [""],
+  countryName: [""],
+  rainProb: [""],
+};
+
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {

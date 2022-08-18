@@ -1,10 +1,9 @@
-export default function initialState() {
-  return {
-    weather: {
-      tempNum: [""],
+export const initialState = {
+    
+      tempNum: [],
       cityName: [""],
       countryName: [""],
       rainProb: [""],
-    },
-  };
-}
+    };
+  
+
