@@ -1,1 +1,1 @@
-export * from './weatherActions'
+export * as actions from "./weatherActions"

@@ -1,4 +1,6 @@
-const getTemp = (state) => state.rootReducer.tempNum;
-const getCity = (state) => state.rootReducer.cityName;
-const getCountry = (state) => state.rootReducer.countryName;
-const getRain = (state) => state.rootReducer.rainProb;
+
+
+export const getTemp = (state) => state.rootReducer.tempNum;
+export const getCity = (state) => state.rootReducer.cityName;
+export const getCountry = (state) => state.rootReducer.countryName;
+export const getRain = (state) => state.rootReducer.rainProb;

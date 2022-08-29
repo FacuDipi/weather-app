@@ -10,28 +10,36 @@ import {
   Button,
   Spacer,
 } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
-import * as Temp from "../data/getWeatherdata";
 
 
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPassengers } from "./store/actions";
-import { getPassengers, getCount } from "./store/selectors";
-
-  const dispatch = useDispatch();
-  const passengers = useSelector(getPassengers);
-  const count = useSelector(getCount);
-
+import { actions } from "./store/actions";
+import { getTemp,getCity,getCountry,getRain} from "../store/selectors/weatherSelector";
 
 //JSON.toString(data);
 
 const TempNum = () => {
-  const inputHandler = (event) => {
-    setGetState(event.target.value);
-  };
+  const dispatch = useDispatch();
+  const temp = useSelector(getTemp);
+  const city = useSelector(getCity);
+  const coutry = useSelector(getCountry);
+  const rainProb = useSelector(getRain);
+
+//change thid fucntion
+  const inputHandler = temp(state => state.target.value);
+
   const submitHandler = () => {
     setState(getState);
   };
+
+
+//for this function
+  const inputValue = useSelector(state => state.sample.value);
+  
+  const handleChange = (e) => {
+    dispatch({type: 'CHANGE_INPUT_VALUE', payload: e.target.value})
+  }
+
 
   return (
     <Container bg="red" maxW="30vw" maxH="30vh" border="1px">
