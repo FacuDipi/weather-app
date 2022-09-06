@@ -1,9 +1,9 @@
 //import initialState from './initialState'
-import { fetchWeather, FETCH_WEATHER } from '../actions';
+import { fetchWeather } from '../actions';
  
 const initialState = {
     
-  tempNum: [],
+  tempNum: [''],
   cityName: [""],
   countryName: [""],
   rainProb: [""],
@@ -12,7 +12,7 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
-      case FETCH_WEATHER:
+      case "FETCH_WEATHER":
         return {
           ...state,
         tempNum: action.payload.main.temp ,

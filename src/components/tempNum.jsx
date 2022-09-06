@@ -11,9 +11,10 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 
-
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { actions } from "./store/actions";
+import reducer from "../store/reducers";
+import { fetchWeather } from "../store/actions/weatherActions";
 import { getTemp,getCity,getCountry,getRain} from "../store/selectors/weatherSelector";
 
 //JSON.toString(data);
@@ -22,48 +23,49 @@ const TempNum = () => {
   const dispatch = useDispatch();
   const temp = useSelector(getTemp);
   const city = useSelector(getCity);
-  const coutry = useSelector(getCountry);
+  const country = useSelector(getCountry);
   const rainProb = useSelector(getRain);
 
 //change thid fucntion
-  const inputHandler = temp(state => state.target.value);
+  const inputHandler = temp(temp);
 
-  const submitHandler = () => {
-    setState(getState);
-  };
+//const submitHandler = () => {
+  //  setState(getState);
+  //};
 
 
 //for this function
-  const inputValue = useSelector(state => state.sample.value);
+  //const inputValue = useSelector(state => state.sample.value);
   
   const handleChange = (e) => {
     dispatch({type: 'CHANGE_INPUT_VALUE', payload: e.target.value})
   }
 
+  useEffect(() => dispatch(fetchWeather()), [dispatch]);
 
   return (
     <Container bg="red" maxW="30vw" maxH="30vh" border="1px">
       <FormControl>
         <FormLabel htmlFor="city">City</FormLabel>
-        <Input id="city" type="city" onChange={inputHandler} value={getState} />
+        <Input id="city" type="city" onChange={temp} value={"city"} />
         <FormHelperText>Search any City</FormHelperText>
       </FormControl>
       <Box>
-        <Button colorScheme="teal" size="sm" onClick={submitHandler}>
+        <Button colorScheme="teal" size="sm" onClick={inputHandler}>
           Search
         </Button>
       </Box>
 
       <Box border="1px" height="30px">
-        {apiData.main ? (
-          <p>The temp is: {apiData.main.temp.toFixed(0)} °C</p>
+        {this.state? (
+          <p>The temp is: {temp.toFixed(0)} °C</p>
         ) : (
           ""
         )}
         <Flex>
-          {apiData.name}
+          {city}
           <Spacer />
-          {apiData.sys ? <div>{apiData.sys.country} </div> : ""}
+          {this.state ? <div>{country} </div> : ""}
         </Flex>
       </Box>
     </Container>
